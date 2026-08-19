@@ -1,4 +1,4 @@
-# Ride-Sharing Data Model Project
+#  🚗 Ride-Sharing Data Model Project
 
 A relational database design for a ride-hailing platform (Uber/Ola-style), covering drivers, riders, vehicles, rides, payments, and ratings.
 
@@ -15,8 +15,7 @@ This project models the core entities and relationships needed to run a ride-hai
 The schema is normalized to 3NF, with foreign keys and indexes defined for all relationships.
 
 ## Entity Relationship Diagram
-
-data-model.png
+<img width="1634" height="1320" alt="data-model" src="https://github.com/user-attachments/assets/3f64d046-f944-48a6-b671-63e67b6428f1" />
 
 ## Schema Summary
 
