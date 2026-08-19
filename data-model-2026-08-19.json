@@ -1,0 +1,1289 @@
+{
+  "tables": [
+    {
+      "id": "table-id-1787110570693-7rm1xg2t4",
+      "name": "DRIVER",
+      "fields": [
+        {
+          "id": "field-1787110834049",
+          "name": "driver_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787110857693",
+          "name": "name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787110869000",
+          "name": "email",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1787110877148",
+          "name": "phone",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1787110958474",
+          "name": "profile_pic_url",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787110978306",
+          "name": "total_ride",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787111021200",
+          "name": "profile_created_at",
+          "type": "TIMESTAMP",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787111075134",
+          "name": "is_active",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787117908537",
+          "name": "driver_availability",
+          "type": "BOOLEAN",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1787110759436-t927ssh73",
+      "name": "RIDE",
+      "fields": [
+        {
+          "id": "field-1787114021070",
+          "name": "ride_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787114289017",
+          "name": "driver_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1787110570693-7rm1xg2t4",
+            "fieldId": "field-1787110834049"
+          }
+        },
+        {
+          "id": "field-1787114349143",
+          "name": "rider_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1787111312132-c56brfe57",
+            "fieldId": "field-id-1787111312132-xo7iq0vo4"
+          }
+        },
+        {
+          "id": "field-1787114788373",
+          "name": "vehicle_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1787113377630-ccd011cbf",
+            "fieldId": "field-1787114741778"
+          }
+        },
+        {
+          "id": "field-1787114423624",
+          "name": "payment_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1787112668476-rk741ei0b",
+            "fieldId": "field-1787114402351"
+          }
+        },
+        {
+          "id": "field-1787116381327",
+          "name": "rating_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1787115956377-q6gbz4baw",
+            "fieldId": "field-1787115984235"
+          }
+        },
+        {
+          "id": "field-1787114041415",
+          "name": "pickup_lat",
+          "type": "DECIMAL",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787114057783",
+          "name": "pickup_long",
+          "type": "DECIMAL",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787114064932",
+          "name": "drop_lat",
+          "type": "DECIMAL",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787114072627",
+          "name": "drop_long",
+          "type": "DECIMAL",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787114095109",
+          "name": "requested_at",
+          "type": "TIMESTAMP",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787114108120",
+          "name": "completed_at",
+          "type": "TIMESTAMP",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787114130001",
+          "name": "ride_type",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787114141104",
+          "name": "ride_status",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787114159856",
+          "name": "ride_fare",
+          "type": "DECIMAL",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787117698164",
+          "name": "cancelled_by",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787117713474",
+          "name": "cancellation_reason",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787117732840",
+          "name": "cancelled_at",
+          "type": "TIMESTAMP",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787117867040",
+          "name": "distance_km",
+          "type": "DECIMAL",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1787111312132-c56brfe57",
+      "name": "RIDER",
+      "fields": [
+        {
+          "id": "field-id-1787111312132-xo7iq0vo4",
+          "name": "rider_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1787115607549",
+          "name": "name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787115617646",
+          "name": "email",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1787115625687",
+          "name": "phone",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1787115644907",
+          "name": "rating",
+          "type": "FLOAT",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787115665053",
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787115681897",
+          "name": "profile_pic_url",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1787112668476-rk741ei0b",
+      "name": "PAYMENT",
+      "fields": [
+        {
+          "id": "field-1787114402351",
+          "name": "payment_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113752584",
+          "name": "transaction_id",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113587758",
+          "name": "amount",
+          "type": "DECIMAL",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113599696",
+          "name": "currency",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113615260",
+          "name": "payment_method",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113626817",
+          "name": "create_at",
+          "type": "TIMESTAMP",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113634672",
+          "name": "process_at",
+          "type": "TIMESTAMP",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113646697",
+          "name": "payment_status",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113742143",
+          "name": "payment_token",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1787113377630-ccd011cbf",
+      "name": "VEHICLE",
+      "fields": [
+        {
+          "id": "field-1787114741778",
+          "name": "vehicle_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113883349",
+          "name": "driver_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1787113804971",
+          "name": "make",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113809872",
+          "name": "model",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113820960",
+          "name": "year",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113843728",
+          "name": "license_no",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1787113858721",
+          "name": "vehicle_no",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1787113870183",
+          "name": "capacity",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787113903933",
+          "name": "color",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1787115956377-q6gbz4baw",
+      "name": "RATING",
+      "fields": [
+        {
+          "id": "field-1787115984235",
+          "name": "rating_id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787116008004",
+          "name": "ride_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787116046661",
+          "name": "score",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1787116065558",
+          "name": "comment",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "id-1787114325039-ew1z165u6",
+      "name": "DRIVER.driver_id → RIDE.driver_id",
+      "sourceTableId": "table-id-1787110570693-7rm1xg2t4",
+      "sourceFieldId": "field-1787110834049",
+      "targetTableId": "table-id-1787110759436-t927ssh73",
+      "targetFieldId": "field-1787114289017",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1787114641496-mwtcview4",
+      "name": "RIDE.payment_id → PAYMENT.payment_id",
+      "sourceTableId": "table-id-1787110759436-t927ssh73",
+      "sourceFieldId": "field-1787114423624",
+      "targetTableId": "table-id-1787112668476-rk741ei0b",
+      "targetFieldId": "field-1787114402351",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1787114795418-hfmwciyhb",
+      "name": "RIDE.vehicle_id → VEHICLE.vehicle_id",
+      "sourceTableId": "table-id-1787110759436-t927ssh73",
+      "sourceFieldId": "field-1787114788373",
+      "targetTableId": "table-id-1787113377630-ccd011cbf",
+      "targetFieldId": "field-1787114741778",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1787115753130-nt5340ocw",
+      "name": "RIDER.rider_id → RIDE.rider_id",
+      "sourceTableId": "table-id-1787111312132-c56brfe57",
+      "sourceFieldId": "field-id-1787111312132-xo7iq0vo4",
+      "targetTableId": "table-id-1787110759436-t927ssh73",
+      "targetFieldId": "field-1787114349143",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1787116413842-7pfon380x",
+      "name": "RATING.rating_id → RIDE.rating_id",
+      "sourceTableId": "table-id-1787115956377-q6gbz4baw",
+      "sourceFieldId": "field-1787115984235",
+      "targetTableId": "table-id-1787110759436-t927ssh73",
+      "targetFieldId": "field-1787116381327",
+      "type": "one-to-many"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "table-id-1787110570693-7rm1xg2t4",
+      "type": "tableNode",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1787110570693-7rm1xg2t4",
+          "name": "DRIVER",
+          "fields": [
+            {
+              "id": "field-1787110834049",
+              "name": "driver_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787110857693",
+              "name": "name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787110869000",
+              "name": "email",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1787110877148",
+              "name": "phone",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1787110958474",
+              "name": "profile_pic_url",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787110978306",
+              "name": "total_ride",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787111021200",
+              "name": "profile_created_at",
+              "type": "TIMESTAMP",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787111075134",
+              "name": "is_active",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787117908537",
+              "name": "driver_availability",
+              "type": "BOOLEAN",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 392
+    },
+    {
+      "id": "table-id-1787110759436-t927ssh73",
+      "type": "tableNode",
+      "position": {
+        "x": 380,
+        "y": 224
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1787110759436-t927ssh73",
+          "name": "RIDE",
+          "fields": [
+            {
+              "id": "field-1787114021070",
+              "name": "ride_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787114289017",
+              "name": "driver_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1787110570693-7rm1xg2t4",
+                "fieldId": "field-1787110834049"
+              }
+            },
+            {
+              "id": "field-1787114349143",
+              "name": "rider_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1787111312132-c56brfe57",
+                "fieldId": "field-id-1787111312132-xo7iq0vo4"
+              }
+            },
+            {
+              "id": "field-1787114788373",
+              "name": "vehicle_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1787113377630-ccd011cbf",
+                "fieldId": "field-1787114741778"
+              }
+            },
+            {
+              "id": "field-1787114423624",
+              "name": "payment_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1787112668476-rk741ei0b",
+                "fieldId": "field-1787114402351"
+              }
+            },
+            {
+              "id": "field-1787116381327",
+              "name": "rating_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1787115956377-q6gbz4baw",
+                "fieldId": "field-1787115984235"
+              }
+            },
+            {
+              "id": "field-1787114041415",
+              "name": "pickup_lat",
+              "type": "DECIMAL",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787114057783",
+              "name": "pickup_long",
+              "type": "DECIMAL",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787114064932",
+              "name": "drop_lat",
+              "type": "DECIMAL",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787114072627",
+              "name": "drop_long",
+              "type": "DECIMAL",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787114095109",
+              "name": "requested_at",
+              "type": "TIMESTAMP",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787114108120",
+              "name": "completed_at",
+              "type": "TIMESTAMP",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787114130001",
+              "name": "ride_type",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787114141104",
+              "name": "ride_status",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787114159856",
+              "name": "ride_fare",
+              "type": "DECIMAL",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787117698164",
+              "name": "cancelled_by",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787117713474",
+              "name": "cancellation_reason",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787117732840",
+              "name": "cancelled_at",
+              "type": "TIMESTAMP",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787117867040",
+              "name": "distance_km",
+              "type": "DECIMAL",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 747
+    },
+    {
+      "id": "table-id-1787111312132-c56brfe57",
+      "type": "tableNode",
+      "position": {
+        "x": 0,
+        "y": 392
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1787111312132-c56brfe57",
+          "name": "RIDER",
+          "fields": [
+            {
+              "id": "field-id-1787111312132-xo7iq0vo4",
+              "name": "rider_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1787115607549",
+              "name": "name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787115617646",
+              "name": "email",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1787115625687",
+              "name": "phone",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1787115644907",
+              "name": "rating",
+              "type": "FLOAT",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787115665053",
+              "name": "created_at",
+              "type": "TIMESTAMP",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787115681897",
+              "name": "profile_pic_url",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 322,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -660,
+        "y": 300
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1787112668476-rk741ei0b",
+      "type": "tableNode",
+      "position": {
+        "x": 760,
+        "y": 133
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1787112668476-rk741ei0b",
+          "name": "PAYMENT",
+          "fields": [
+            {
+              "id": "field-1787114402351",
+              "name": "payment_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113752584",
+              "name": "transaction_id",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113587758",
+              "name": "amount",
+              "type": "DECIMAL",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113599696",
+              "name": "currency",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113615260",
+              "name": "payment_method",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113626817",
+              "name": "create_at",
+              "type": "TIMESTAMP",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113634672",
+              "name": "process_at",
+              "type": "TIMESTAMP",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113646697",
+              "name": "payment_status",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113742143",
+              "name": "payment_token",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 392
+    },
+    {
+      "id": "table-id-1787113377630-ccd011cbf",
+      "type": "tableNode",
+      "position": {
+        "x": 760,
+        "y": 525
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1787113377630-ccd011cbf",
+          "name": "VEHICLE",
+          "fields": [
+            {
+              "id": "field-1787114741778",
+              "name": "vehicle_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113883349",
+              "name": "driver_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1787113804971",
+              "name": "make",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113809872",
+              "name": "model",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113820960",
+              "name": "year",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113843728",
+              "name": "license_no",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1787113858721",
+              "name": "vehicle_no",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1787113870183",
+              "name": "capacity",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787113903933",
+              "name": "color",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 392
+    },
+    {
+      "id": "table-id-1787115956377-q6gbz4baw",
+      "type": "tableNode",
+      "position": {
+        "x": 0,
+        "y": 728
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1787115956377-q6gbz4baw",
+          "name": "RATING",
+          "fields": [
+            {
+              "id": "field-1787115984235",
+              "name": "rating_id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787116008004",
+              "name": "ride_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787116046661",
+              "name": "score",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1787116065558",
+              "name": "comment",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 260,
+      "height": 215
+    }
+  ],
+  "edges": [
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "source": "table-id-1787110570693-7rm1xg2t4",
+      "sourceHandle": "field-1787110834049-source",
+      "target": "table-id-1787110759436-t927ssh73",
+      "targetHandle": "field-1787114289017-target",
+      "id": "edge-id-1787114325039-ew1z165u6",
+      "data": {
+        "relationship": {
+          "id": "id-1787114325039-ew1z165u6",
+          "name": "DRIVER.driver_id → RIDE.driver_id",
+          "sourceTableId": "table-id-1787110570693-7rm1xg2t4",
+          "sourceFieldId": "field-1787110834049",
+          "targetTableId": "table-id-1787110759436-t927ssh73",
+          "targetFieldId": "field-1787114289017",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "source": "table-id-1787110759436-t927ssh73",
+      "sourceHandle": "field-1787114423624-source",
+      "target": "table-id-1787112668476-rk741ei0b",
+      "targetHandle": "field-1787114402351-target",
+      "id": "edge-id-1787114641496-mwtcview4",
+      "data": {
+        "relationship": {
+          "id": "id-1787114641496-mwtcview4",
+          "name": "RIDE.payment_id → PAYMENT.payment_id",
+          "sourceTableId": "table-id-1787110759436-t927ssh73",
+          "sourceFieldId": "field-1787114423624",
+          "targetTableId": "table-id-1787112668476-rk741ei0b",
+          "targetFieldId": "field-1787114402351",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "source": "table-id-1787110759436-t927ssh73",
+      "sourceHandle": "field-1787114788373-source",
+      "target": "table-id-1787113377630-ccd011cbf",
+      "targetHandle": "field-1787114741778-target",
+      "id": "edge-id-1787114795418-hfmwciyhb",
+      "data": {
+        "relationship": {
+          "id": "id-1787114795418-hfmwciyhb",
+          "name": "RIDE.vehicle_id → VEHICLE.vehicle_id",
+          "sourceTableId": "table-id-1787110759436-t927ssh73",
+          "sourceFieldId": "field-1787114788373",
+          "targetTableId": "table-id-1787113377630-ccd011cbf",
+          "targetFieldId": "field-1787114741778",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "source": "table-id-1787111312132-c56brfe57",
+      "sourceHandle": "field-id-1787111312132-xo7iq0vo4-source",
+      "target": "table-id-1787110759436-t927ssh73",
+      "targetHandle": "field-1787114349143-target",
+      "id": "edge-id-1787115753130-nt5340ocw",
+      "data": {
+        "relationship": {
+          "id": "id-1787115753130-nt5340ocw",
+          "name": "RIDER.rider_id → RIDE.rider_id",
+          "sourceTableId": "table-id-1787111312132-c56brfe57",
+          "sourceFieldId": "field-id-1787111312132-xo7iq0vo4",
+          "targetTableId": "table-id-1787110759436-t927ssh73",
+          "targetFieldId": "field-1787114349143",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "source": "table-id-1787115956377-q6gbz4baw",
+      "sourceHandle": "field-1787115984235-source",
+      "target": "table-id-1787110759436-t927ssh73",
+      "targetHandle": "field-1787116381327-target",
+      "id": "edge-id-1787116413842-7pfon380x",
+      "data": {
+        "relationship": {
+          "id": "id-1787116413842-7pfon380x",
+          "name": "RATING.rating_id → RIDE.rating_id",
+          "sourceTableId": "table-id-1787115956377-q6gbz4baw",
+          "sourceFieldId": "field-1787115984235",
+          "targetTableId": "table-id-1787110759436-t927ssh73",
+          "targetFieldId": "field-1787116381327",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    }
+  ],
+  "timestamp": 1787118229948,
+  "version": "1.0"
+}
